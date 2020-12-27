@@ -6,9 +6,9 @@
     required: true
   },
   email: {
-  type: String,
-  required: true,
-  unique: true
+    type: String,
+    required: true,
+    unique: true
   },
   password: {
     type: String,
