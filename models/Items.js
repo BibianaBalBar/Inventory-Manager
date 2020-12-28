@@ -14,11 +14,11 @@ const ItemSchema = mongoose.Schema({
   },
   code: {
     type: String,
-    required: true
+    required: true,    
+    unique: true
   },
   quantity: {
     type: Number,
-    required: true
   },
   type: {
     type: String,
