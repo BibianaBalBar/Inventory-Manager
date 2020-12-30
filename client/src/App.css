@@ -19,12 +19,12 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #f7faff;
+  background-color: #f3f5f8;
   color: #333;
 }
 
 a {
-  color: var(--primary-color);
+  color: var(--dark-color);
   text-decoration: none;
 }
 
@@ -34,6 +34,7 @@ a:hover {
 
 ul {
   list-style: none;
+  color: var(--dark-color);
 }
 
 img {
@@ -365,20 +366,26 @@ table th {
   box-shadow: 20px 20px 60px #e0e0e0, -20px -20px 60px #ffffff;
   opacity: 0.9;
   margin-bottom: 1rem;
+  color: var(--dark-color);
 }
 
 .navbar ul {
   display: flex;
 }
 
+.navbar h1 {
+  font-weight: lighter;
+}
+
 .navbar a {
-  color: #fff;
+  color: var(--dark-color);
   padding: 0.45rem;
   margin: 0 0.25rem;
+  font-size: 1.5rem;
 }
 
 .navbar a:hover {
-  color: var(--light-color);
+  color: #1384c5;
 }
 
 .navbar .welcome span {
