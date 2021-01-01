@@ -97,8 +97,10 @@ img {
 /* Cards */
 .card {
   padding: 1rem;
-  border: #ccc 1px dotted;
+  background: #fff;
   margin: 0.7rem 0;
+  border-radius: 30px;
+  box-shadow: 18px 18px 30px #d9d9d9, -18px -18px 30px #ffffff;
 }
 
 /* List */
@@ -366,7 +368,7 @@ table th {
   z-index: 1;
   width: 100%;
   background: #fff;
-  box-shadow: 20px 20px 60px #e0e0e0, -20px -20px 60px #ffffff;
+  box-shadow: 18px 18px 30px #d9d9d9, -18px -18px 30px #ffffff;
   opacity: 0.9;
   margin-bottom: 1rem;
   color: var(--dark-color);

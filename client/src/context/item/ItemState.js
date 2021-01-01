@@ -42,7 +42,7 @@ const ItemState = props => {
     ]
   };
 
-  const [state, dispatch] = useReducer(contactReducer, initialState);
+  const [state, dispatch] = useReducer(itemReducer, initialState);
 
   //Add Item
 

@@ -22,7 +22,7 @@ const ItemSchema = mongoose.Schema({
   },
   type: {
     type: String,
-    default: 'product'
+    default: 'own'
   },
   date: {
     type: Date,

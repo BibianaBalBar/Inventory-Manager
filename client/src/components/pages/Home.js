@@ -1,9 +1,15 @@
 import React from 'react';
+import Items from '../items/Items';
 
 const Home = () => {
   return (
-    <div>
-      <h1>Home</h1>
+    <div className="grid-2">
+      <div>
+        {/* Item form*/}
+      </div>
+      <div>
+        <Items />
+      </div>
     </div>
   )
 };
