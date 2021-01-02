@@ -1,6 +1,9 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react';
+import ItemContext from '../../context/item/itemContext';
 
 const ItemForm = () => {
+  const itemContext = useContext(ItemContext);
+
   const [item, setItem] = useState({
     name: '',
     description: '',
@@ -12,9 +15,21 @@ const ItemForm = () => {
   const { name, description, code, quantity, type } = item;
 
   const onChange = (e) => setItem({...item, [e.target.name]: e.target.value});
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    itemContext.addItem(item);
+    setItem({
+      name: '',
+      description: '',
+      code: '',
+      quantity: 0,
+      type: 'own'
+    });
+  };
   
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <h2 className="text-primary">Add Product</h2>
       <input 
         type="text" 
@@ -51,12 +66,14 @@ const ItemForm = () => {
         name="type"
         value="own"
         checked={type === 'own'}
+        onChange={onChange}
       /> Own{` `}
       <input 
         type="radio"
         name="type"
         value="third party"
         checked={type === 'third party'}
+        onChange={onChange}
       /> Third Party
       <div>
         <input type="submit" value="Add Product" className="btn btn-primary btn-block"/>

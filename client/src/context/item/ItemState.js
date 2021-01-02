@@ -1,5 +1,5 @@
 import React, { useReducer, userReducer } from 'react';
-import uuid from 'uuid';
+import {v4 as uuid} from 'uuid';
 import ItemContext from './itemContext';
 import itemReducer from './itemReducer';
 import {
@@ -45,6 +45,10 @@ const ItemState = props => {
   const [state, dispatch] = useReducer(itemReducer, initialState);
 
   //Add Item
+  const addItem = item => {
+    item.id = uuid();
+    dispatch({ type: ADD_ITEM, payload: item });
+  }
 
   //Delete Item
 
@@ -61,7 +65,8 @@ const ItemState = props => {
   return (
     <ItemContext.Provider
       value={{
-        items: state.items
+        items: state.items,
+        addItem
       }}
     >
       {props.children}
