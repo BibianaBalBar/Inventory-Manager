@@ -10,7 +10,7 @@ const ItemComponent = ({ item }) => {
         {name}{' '} 
         <span 
           style={{ float: 'right' }}
-          className={'badge' + ' ' + (type === 'own' ? 'badge-success' : 'badge-primary')}>
+          className={`badge ${(type === 'own' ? 'badge-success' : 'badge-primary')}`}>
             {type.charAt(0).toUpperCase() + type.slice(1)}
         </span>
       </h3>

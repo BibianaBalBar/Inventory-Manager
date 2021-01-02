@@ -1,11 +1,12 @@
 import React from 'react';
 import Items from '../items/Items';
+import ItemForm from '../items/ItemForm';
 
 const Home = () => {
   return (
     <div className="grid-2">
       <div>
-        {/* Item form*/}
+        <ItemForm />
       </div>
       <div>
         <Items />
