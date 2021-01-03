@@ -4,12 +4,13 @@ import ItemContext from '../../context/item/itemContext';
 
 const ItemComponent = ({ item }) => {
   const itemContext = useContext(ItemContext);
-  const {deleteItem} = itemContext;
+  const {deleteItem, setCurrent, clearCurrent} = itemContext;
 
   const { id, name, description, code, quantity, type } = item;
 
   const onDelete = () => {
     deleteItem(id);
+    clearCurrent();
   }
 
   return (
@@ -37,7 +38,7 @@ const ItemComponent = ({ item }) => {
           </li>
         )}        
       </ul>
-      <button className="btn btn-dark btn-sm">Update</button>
+      <button className="btn btn-dark btn-sm" onClick={() => setCurrent(item)}>Update</button>
       <button className="btn btn-danger btn-sm" onClick={onDelete}>Delete</button>
     </div>
   )

@@ -39,7 +39,8 @@ const ItemState = props => {
         quantity: 20,
         type: 'storage'
       }
-    ]
+    ],
+    current: null
   };
 
   const [state, dispatch] = useReducer(itemReducer, initialState);
@@ -56,8 +57,14 @@ const ItemState = props => {
   };
 
   //Set Current Item
+  const setCurrent = item => {    
+    dispatch({ type: SET_CURRENT, payload: item });
+  };
 
   //Clear Current Item
+  const clearCurrent = () => {    
+    dispatch({ type: CLEAR_CURRENT });
+  };
 
   //Update Item
 
@@ -69,8 +76,11 @@ const ItemState = props => {
     <ItemContext.Provider
       value={{
         items: state.items,
+        current: state.current,
         addItem,
-        deleteItem
+        deleteItem,
+        setCurrent,
+        clearCurrent
       }}
     >
       {props.children}
