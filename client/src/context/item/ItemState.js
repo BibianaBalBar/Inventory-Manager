@@ -48,9 +48,12 @@ const ItemState = props => {
   const addItem = item => {
     item.id = uuid();
     dispatch({ type: ADD_ITEM, payload: item });
-  }
+  };
 
   //Delete Item
+  const deleteItem = id => {    
+    dispatch({ type: DELETE_ITEM, payload: id });
+  };
 
   //Set Current Item
 
@@ -66,7 +69,8 @@ const ItemState = props => {
     <ItemContext.Provider
       value={{
         items: state.items,
-        addItem
+        addItem,
+        deleteItem
       }}
     >
       {props.children}

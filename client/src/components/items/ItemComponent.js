@@ -1,8 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import PropTypes from 'prop-types';
+import ItemContext from '../../context/item/itemContext';
 
 const ItemComponent = ({ item }) => {
+  const itemContext = useContext(ItemContext);
+  const {deleteItem} = itemContext;
+
   const { id, name, description, code, quantity, type } = item;
+
+  const onDelete = () => {
+    deleteItem(id);
+  }
 
   return (
     <div className="card">
@@ -30,7 +38,7 @@ const ItemComponent = ({ item }) => {
         )}        
       </ul>
       <button className="btn btn-dark btn-sm">Update</button>
-      <button className="btn btn-danger btn-sm">Delete</button>
+      <button className="btn btn-danger btn-sm" onClick={onDelete}>Delete</button>
     </div>
   )
 };

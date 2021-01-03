@@ -53,9 +53,11 @@ const ItemForm = () => {
         value={code} 
         onChange={onChange}
       />
+      <label for="quantity">Quantity:</label> {` `}
       <input 
+        id="quantity"
         type="number" 
-        placeholder="Quantity" 
+        placeholder="Quantity"         
         name="quantity"
         value={quantity} 
         onChange={onChange}
