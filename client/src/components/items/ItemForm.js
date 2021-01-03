@@ -1,8 +1,24 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import ItemContext from '../../context/item/itemContext';
 
 const ItemForm = () => {
   const itemContext = useContext(ItemContext);
+
+  const { addItem, updateItem, current, clearCurrent } = itemContext;
+
+  useEffect(() => {
+    if(current !== null) {
+      setItem(current);
+    } else {
+      setItem({
+        name: '',
+        description: '',
+        code: '',
+        quantity: 0,
+        type: 'own'
+      });
+    }
+  }, [itemContext, current]);
 
   const [item, setItem] = useState({
     name: '',
@@ -18,19 +34,21 @@ const ItemForm = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    itemContext.addItem(item);
-    setItem({
-      name: '',
-      description: '',
-      code: '',
-      quantity: 0,
-      type: 'own'
-    });
+    if (current === null) {
+      addItem(item);
+    } else {
+      updateItem(item);
+    }       
+    clearAll();
   };
+
+  const clearAll = () => {
+    clearCurrent();
+  }
   
   return (
     <form onSubmit={onSubmit}>
-      <h2 className="text-primary">Add Product</h2>
+      <h2 className="text-primary">{current ? 'Update Product' : 'Add Product'}</h2>
       <input 
         type="text" 
         placeholder="Name" 
@@ -78,8 +96,17 @@ const ItemForm = () => {
         onChange={onChange}
       /> Third Party
       <div>
-        <input type="submit" value="Add Product" className="btn btn-primary btn-block"/>
+        <input 
+          type="submit" 
+          value={current ? 'Update' : 'Add'} 
+          className="btn btn-primary btn-block"
+        />
       </div>
+      {current && <div>
+        <button className="btn btn-dark btn-block" onClick={clearAll}>
+          Clear
+        </button>
+      </div>}
     </form>
   )
 };

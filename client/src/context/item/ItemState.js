@@ -67,6 +67,9 @@ const ItemState = props => {
   };
 
   //Update Item
+  const updateItem = item => {    
+    dispatch({ type: UPDATE_ITEM, payload: item });
+  };
 
   //Filter Items
 
@@ -80,7 +83,8 @@ const ItemState = props => {
         addItem,
         deleteItem,
         setCurrent,
-        clearCurrent
+        clearCurrent,
+        updateItem
       }}
     >
       {props.children}
