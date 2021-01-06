@@ -87,6 +87,7 @@ const ItemState = props => {
       value={{
         items: state.items,
         current: state.current,
+        filtered: state.filtered,
         addItem,
         deleteItem,
         setCurrent,
