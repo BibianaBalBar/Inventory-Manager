@@ -137,8 +137,8 @@ img {
 .py-3 {
   padding: 3rem 0;
 }
-.p-right {
-  padding-right: 5rem;
+.p-none {
+  padding: 0;
 }
 
 /* Margin */

@@ -7,13 +7,15 @@ import AuthContext from '../../context/auth/authContext';
 const Home = () => {
   const authContext = useContext(AuthContext);
 
+  const { user } = authContext;
+
   useEffect(() => {
     authContext.loadUser();
     // eslint-disable-next-line
   }, []);
 
   return (
-    <div className="grid-2">
+    <div className="grid-2">        
       <div>
         <ItemForm />
       </div>
@@ -21,7 +23,7 @@ const Home = () => {
         <ItemFilter />
         <Items />
       </div>
-    </div>
+    </div>    
   )
 };
 
