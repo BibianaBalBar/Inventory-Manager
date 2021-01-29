@@ -3,25 +3,43 @@ import axios from 'axios';
 import ItemContext from './itemContext';
 import itemReducer from './itemReducer';
 import {
+  GET_ITEMS,
   ADD_ITEM,
   DELETE_ITEM,
   SET_CURRENT,
   CLEAR_CURRENT,
   UPDATE_ITEM,
   FILTER_ITEMS,
+  CLEAR_ITEMS,
   CLEAR_FILTER, 
   ITEM_ERROR
 } from '../types';
 
 const ItemState = props => {
   const initialState = {
-    items: [],
+    items: null,
     current: null,
     filtered: null,
     error: null
   };
 
   const [state, dispatch] = useReducer(itemReducer, initialState);
+
+  //Get Items
+  const getItems = async () => {
+    try {
+      const res = await axios.get('/api/items');
+      dispatch({ 
+        type: GET_ITEMS, 
+        payload: res.data 
+      });
+    } catch (err) {
+      dispatch({
+        type: ITEM_ERROR, 
+        payload: err.response.msg 
+      });
+    }    
+  };
 
   //Add Item
   const addItem = async item => {
@@ -88,7 +106,8 @@ const ItemState = props => {
         clearCurrent,
         updateItem,
         filterItems,
-        clearFilter
+        clearFilter,
+        getItems
       }}
     >
       {props.children}
