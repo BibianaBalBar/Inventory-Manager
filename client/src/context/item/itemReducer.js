@@ -7,7 +7,8 @@ import {
   UPDATE_ITEM,
   FILTER_ITEMS,
   CLEAR_FILTER,
-  ITEM_ERROR
+  ITEM_ERROR,
+  CLEAR_ITEMS
 } from '../types';
 
 export default (state, action) => {
@@ -35,6 +36,14 @@ export default (state, action) => {
         ...state,
         items: state.items.filter(item => item.id !== action.payload),
         loading: false
+      };
+    case CLEAR_ITEMS:
+      return {
+        ...state,
+        items: null,
+        filtered: null,
+        error: null,
+        current: null
       };
     case SET_CURRENT:
       return {

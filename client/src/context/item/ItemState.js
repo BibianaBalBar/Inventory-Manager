@@ -68,6 +68,11 @@ const ItemState = props => {
     dispatch({ type: DELETE_ITEM, payload: id });
   };
 
+  //Clear Items
+  const clearItems = () => {    
+    dispatch({ type: CLEAR_ITEMS });
+  };
+
   //Set Current Item
   const setCurrent = item => {    
     dispatch({ type: SET_CURRENT, payload: item });
@@ -107,7 +112,8 @@ const ItemState = props => {
         updateItem,
         filterItems,
         clearFilter,
-        getItems
+        getItems,
+        clearItems
       }}
     >
       {props.children}
