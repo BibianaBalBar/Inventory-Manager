@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import {v4 as uuid} from 'uuid';
+import axios from 'axios';
 import ItemContext from './itemContext';
 import itemReducer from './itemReducer';
 import {
@@ -9,47 +9,40 @@ import {
   CLEAR_CURRENT,
   UPDATE_ITEM,
   FILTER_ITEMS,
-  CLEAR_FILTER
+  CLEAR_FILTER, 
+  ITEM_ERROR
 } from '../types';
 
 const ItemState = props => {
   const initialState = {
-    items: [
-      {
-        id: 1,
-        name: 'box5',
-        description: 'medium size yellow box',
-        code: '0047',
-        quantity: 25,
-        type: 'storage'
-      },
-      {
-        id: 2,
-        name: 'box6',
-        description: 'small size blue box',
-        code: '0045',
-        quantity: 35,
-        type: 'storage'
-      },
-      {
-        id: 3,
-        name: 'box7',
-        description: 'big size green box',
-        code: '0043',
-        quantity: 20,
-        type: 'storage'
-      }
-    ],
+    items: [],
     current: null,
-    filtered: null
+    filtered: null,
+    error: null
   };
 
   const [state, dispatch] = useReducer(itemReducer, initialState);
 
   //Add Item
-  const addItem = item => {
-    item.id = uuid();
-    dispatch({ type: ADD_ITEM, payload: item });
+  const addItem = async item => {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+
+    try {
+      const res = await axios.post('/api/items', item, config);
+      dispatch({ 
+        type: ADD_ITEM, 
+        payload: res.data 
+      });
+    } catch (err) {
+      dispatch({
+        type: ITEM_ERROR, 
+        payload: err.response.msg 
+      });
+    }    
   };
 
   //Delete Item
@@ -88,6 +81,7 @@ const ItemState = props => {
         items: state.items,
         current: state.current,
         filtered: state.filtered,
+        error: state.error,
         addItem,
         deleteItem,
         setCurrent,

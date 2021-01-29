@@ -18,12 +18,12 @@ const Items = () => {
       <TransitionGroup>
       {filtered !== null 
         ? filtered.map(item => (
-          <CSSTransition key={item.id} timeout={500} classNames="fade">
+          <CSSTransition key={item._id} timeout={500} classNames="fade">
             <ItemComponent item={item} />
             </CSSTransition>
           )) 
         : items.map(item => (
-          <CSSTransition key={item.id} timeout={500} classNames="fade">
+          <CSSTransition key={item._id} timeout={500} classNames="fade">
             <ItemComponent item={item} />
             </CSSTransition>
           ))}
