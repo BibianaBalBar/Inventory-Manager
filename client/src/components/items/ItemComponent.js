@@ -6,10 +6,10 @@ const ItemComponent = ({ item }) => {
   const itemContext = useContext(ItemContext);
   const {deleteItem, setCurrent, clearCurrent} = itemContext;
 
-  const { id, name, description, code, quantity, type } = item;
+  const { _id, name, description, code, quantity, type } = item;
 
   const onDelete = () => {
-    deleteItem(id);
+    deleteItem(_id);
     clearCurrent();
   }
 

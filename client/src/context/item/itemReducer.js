@@ -22,7 +22,7 @@ export default (state, action) => {
     case ADD_ITEM:
       return {
         ...state,
-        items: [...state.items, action.payload],
+        items: [action.payload, ...state.items],
         loading: false
       };
     case UPDATE_ITEM:
@@ -34,7 +34,7 @@ export default (state, action) => {
     case DELETE_ITEM:
       return {
         ...state,
-        items: state.items.filter(item => item.id !== action.payload),
+        items: state.items.filter(item => item._id !== action.payload),
         loading: false
       };
     case CLEAR_ITEMS:
