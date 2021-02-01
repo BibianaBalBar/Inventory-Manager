@@ -22,7 +22,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #f3f5f8;
+  background-color: #eef0f3;
   color: #333;
 }
 
@@ -100,7 +100,7 @@ img {
   background: #fff;
   margin: 0.7rem 0;
   border-radius: 30px;
-  box-shadow: 18px 18px 30px #d9d9d9, -18px -18px 30px #ffffff;
+  /* box-shadow: 18px 18px 30px #d9d9d9, -18px -18px 30px #ffffff; */
 }
 
 /* List */
@@ -371,7 +371,7 @@ table th {
   z-index: 1;
   width: 100%;
   background: #fff;
-  box-shadow: 18px 18px 30px #d9d9d9, -18px -18px 30px #ffffff;
+  /* box-shadow: 18px 18px 30px #d9d9d9, -18px -18px 30px #ffffff; */
   opacity: 0.9;
   margin-bottom: 1rem;
   color: var(--dark-color);

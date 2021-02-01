@@ -28,7 +28,7 @@ export default (state, action) => {
     case UPDATE_ITEM:
       return {
         ...state,
-        items: state.items.map(item => item.id === action.payload.id ? action.payload : item),
+        items: state.items.map(item => item._id === action.payload._id ? action.payload : item),
         loading: false
       };
     case DELETE_ITEM:

@@ -79,6 +79,28 @@ const ItemState = props => {
     }      
   };
 
+  //Update Item
+  const updateItem = async item => {    
+    const config = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+
+    try {
+      const res = await axios.put(`/api/items/${item._id}`, item, config);
+      dispatch({ 
+        type: UPDATE_ITEM, 
+        payload: res.data 
+      });
+    } catch (err) {
+      dispatch({
+        type: ITEM_ERROR, 
+        payload: err.response.msg 
+      });
+    }        
+  };
+
   //Clear Items
   const clearItems = () => {    
     dispatch({ type: CLEAR_ITEMS });
@@ -93,12 +115,7 @@ const ItemState = props => {
   const clearCurrent = () => {    
     dispatch({ type: CLEAR_CURRENT });
   };
-
-  //Update Item
-  const updateItem = item => {    
-    dispatch({ type: UPDATE_ITEM, payload: item });
-  };
-
+  
   //Filter Items
   const filterItems = text => {    
     dispatch({ type: FILTER_ITEMS, payload: text });

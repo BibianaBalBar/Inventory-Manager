@@ -89,10 +89,10 @@ const ItemForm = () => {
       <input 
         type="radio"
         name="type"
-        value="third party"
-        checked={type === 'third party'}
+        value="acquired"
+        checked={type === 'acquired'}
         onChange={onChange}
-      /> Third Party
+      /> Acquired
       <div>
         <input 
           type="submit" 
