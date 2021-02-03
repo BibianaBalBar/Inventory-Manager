@@ -11,7 +11,7 @@ const Item = require('../models/Items');
 // @access    Private
 router.get('/', auth, async (req, res) => {
   try {
-    const items = await Item.find({ user: req.user.id }).sort({ date: -1 });
+    const items = await Item.find({ Item }).sort({ date: -1 });
     res.json(items);
   } catch (err) {
     console.error(err.message);
