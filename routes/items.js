@@ -75,11 +75,6 @@ router.put('/:id', auth, async (req, res) => {
     let item = await Item.findById(req.params.id);
     if(!item) return res.status(404).json({ msg: 'Item not found' });
 
-    // Make sure user owns items
-    if(item.user.toString() !== req.user.id) {
-      return res.status(401).json({ msg: 'Not authorized' });
-    }
-
     item = await Item.findByIdAndUpdate(req.params.id,
       { $set: itemFields },
       { new: true }
@@ -98,11 +93,6 @@ router.delete('/:id', auth, async (req, res) => {
   try {
     let item = await Item.findById(req.params.id);
     if(!item) return res.status(404).json({ msg: 'Item not found' });
-
-    // Make sure user owns items
-    if(item.user.toString() !== req.user.id) {
-      return res.status(401).json({ msg: 'Not authorized' });
-    }
 
     await Item.findByIdAndRemove(req.params.id);
     res.json({ msg: 'Item removed' });
