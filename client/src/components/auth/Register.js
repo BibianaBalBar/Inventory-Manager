@@ -74,6 +74,7 @@ const Register = (props) => {
           <label htmlFor="password2">Confirm Password:</label>
           <input type="password" name="password2" value={password2} onChange={onChange} minLength="6" required/>
         </div>
+        
         <input type="submit" value="Register" className="btn btn-primary btn-block"/>
       </form>
     </div>

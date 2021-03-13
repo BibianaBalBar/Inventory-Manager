@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import AuthContext from '../../context/auth/authContext';
 import ItemContext from '../../context/item/itemContext';
+import Admin from '../admin/Admin';
 
 const Navbar = ({ title, icon }) => {
   const authContext = useContext(AuthContext);
@@ -11,16 +12,15 @@ const Navbar = ({ title, icon }) => {
   const { logout, isAuthenticated, user } = authContext;
   const { clearItems } = itemContext;
 
+  console.log(user)
+
   const onLogout = () => {
     logout();
     clearItems();
   };
 
   const authLinks = (
-    <Fragment>
-      <li className="p-right">
-        <Link to='#'>Hello { user && user.name }</Link>        
-      </li>
+    <Fragment>      
       <li>
         <Link to='/'>Home</Link>
       </li>
@@ -42,9 +42,6 @@ const Navbar = ({ title, icon }) => {
       </li>
       <li>
         <Link to='/about'>About</Link>
-      </li>        
-      <li>
-        <Link to='/register'>Register</Link>
       </li>
       <li>
         <Link to='/login'>Login</Link>
@@ -52,14 +49,22 @@ const Navbar = ({ title, icon }) => {
     </Fragment>
   );
 
+
   return (
     <div className="navbar">
       <h1>
         <i className={icon} /> {title}
       </h1>
       <ul>
+      <li className="p-right">
+        <Link to='#'>Hello { user && user.name }</Link>        
+      </li>
+      </ul>      
+      {isAuthenticated ? <Admin/> : null}
+      <ul>
         {isAuthenticated ? authLinks : guestLinks}
       </ul>
+        
     </div>
   )
 };
