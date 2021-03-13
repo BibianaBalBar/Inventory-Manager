@@ -10,16 +10,16 @@ const Register = (props) => {
   const { register, error, clearErrors, isAuthenticated } = authContext;
 
   useEffect(() => {
-    if(isAuthenticated) {
-      props.history.push('');
-    }
+    // if(isAuthenticated) {
+    //   props.history.push('');
+    // }
 
     if(error === 'User already exists') {
       setAlert(error, 'danger');
       clearErrors();
     }
     // eslint-disable-next-line
-  }, [error, isAuthenticated, props.history]);
+  }, [error, props.history]);
 
   const [user, setUser] = useState({
     name: '',
@@ -55,7 +55,7 @@ const Register = (props) => {
   return (
     <div className="form-container">
       <h1>
-        Account <span className="text-primary">Register</span>
+        Register <span className="text-primary">New Users</span>
       </h1>
       <form onSubmit={onSubmit}>
         <div className="form-group">

@@ -20,18 +20,14 @@ const Navbar = ({ title, icon }) => {
   };
 
   const authLinks = (
-    <Fragment>      
-      <li>
-        <Link to='/'>Home</Link>
-      </li>
-      <li>
-        <Link to='/about'>About</Link>
-      </li>        
+    <Fragment>   
+                   
       <li>
         <a onClick={onLogout} href="#!">
           <i className="fas fa-sign-out-alt"></i> <span className="hide-sm">Logout</span>
         </a>
       </li>
+      
     </Fragment>
   );
 
@@ -39,10 +35,7 @@ const Navbar = ({ title, icon }) => {
     <Fragment>
       <li>
         <Link to='/'>Home</Link>
-      </li>
-      <li>
-        <Link to='/about'>About</Link>
-      </li>
+      </li>      
       <li>
         <Link to='/login'>Login</Link>
       </li>
@@ -60,10 +53,12 @@ const Navbar = ({ title, icon }) => {
         <Link to='#'>Hello { user && user.name }</Link>        
       </li>
       </ul>      
-      {isAuthenticated ? <Admin/> : null}
+      {isAuthenticated ? <Admin/> : null}    
       <ul>
         {isAuthenticated ? authLinks : guestLinks}
-      </ul>
+      </ul>  
+      
+      
         
     </div>
   )
