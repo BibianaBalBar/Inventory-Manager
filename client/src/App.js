@@ -4,10 +4,12 @@ import Navbar from './components/layout/Navbar';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Register from './components/auth/Register';
+import Users from './components/users/Users';
 import Login from './components/auth/Login';
 import Alerts from './components/layout/Alerts';
 import PrivateRoute from './components/routing/PrivateRoute';
 import PrivateAdminRoute from './components/routing/PrivateAdminRoute';
+import PrivateUsersRoute from './components/routing/PrivateUsersRoute';
 import ItemState from './context/item/ItemState';
 import AuthState from './context/auth/AuthState';
 import AlertState from './context/alert/AlertState';
@@ -31,6 +33,7 @@ const App = () => {
                 <Switch>
                   <PrivateRoute exact path='/' component={Home} />
                   <Route exact path='/about' component={About} />
+                  <PrivateUsersRoute exact path='/users' component={Users} />
                   <PrivateAdminRoute exact path='/register' component={Register} />
                   <Route exact path='/login' component={Login} />
                 </Switch>

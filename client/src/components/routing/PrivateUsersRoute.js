@@ -12,7 +12,7 @@ const PrivateAdminRoute = ({ component: Component, ...rest }) => {
         user !== null && user.isAdmin && !loading ? (
           <Component {...props} />
         ) : (
-          <Redirect to='/register' />
+          <Redirect to='/users' />
         )
       } 
     />

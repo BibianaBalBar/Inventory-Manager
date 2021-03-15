@@ -7,7 +7,7 @@ const Register = (props) => {
   const authContext = useContext(AuthContext);
 
   const { setAlert } = alertContext;
-  const { register, error, clearErrors, isAuthenticated } = authContext;
+  const { register, error, clearErrors } = authContext;
 
   useEffect(() => {
     // if(isAuthenticated) {

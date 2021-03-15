@@ -7,7 +7,7 @@ import ItemContext from '../../context/item/itemContext';
 
 const Items = () => {
   const itemContext = useContext(ItemContext);
-
+  console.log(itemContext)
   const { items, filtered, getItems, loading } = itemContext;
   
   useEffect(() => {
