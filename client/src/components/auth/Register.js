@@ -40,7 +40,7 @@ const Register = (props) => {
   const onSubmit = (e) => {
     e.preventDefault();
     if(name === '' || email === '' || password === '') {
-      setAlert('Please enter all fiends.', 'danger');
+      setAlert('Please enter all fields.', 'danger');
     } else if(password !== password2) {
       setAlert('Passwords do nor match.', 'danger');
     } else {
@@ -49,8 +49,16 @@ const Register = (props) => {
         email,
         password
       });
-    }    
+    }
+    setUser({
+      name: '',
+      email: '',
+      password: '',
+      password2: '',
+    })    
   };
+
+  
 
   return (
     <div className="form-container">
@@ -75,7 +83,7 @@ const Register = (props) => {
           <input type="password" name="password2" value={password2} onChange={onChange} minLength="6" required/>
         </div>
         
-        <input type="submit" value="Register" className="btn btn-primary btn-block"/>
+        <input type="submit" value="Register" className="btn btn-primary btn-block" />
       </form>
     </div>
   )
