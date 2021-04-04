@@ -103,6 +103,20 @@ img {
   /* box-shadow: 18px 18px 30px #d9d9d9, -18px -18px 30px #ffffff; */
 }
 
+.card-user {
+  padding: 1rem;
+  background: #fff;
+  margin: 0.7rem 0;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  /* box-shadow: 18px 18px 30px #d9d9d9, -18px -18px 30px #ffffff; */
+}
+
+.card-user-info {  
+  flex-direction: column;
+}
+
 /* List */
 .list {
   margin: 0.5rem 0;
@@ -203,6 +217,22 @@ img {
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
+}
+
+
+.btn-delete {
+  background: var(--light-color);
+  color: #333;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+}
+.btn-side {
+  margin-top: 0.8rem;
 }
 
 .btn-link {

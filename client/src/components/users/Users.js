@@ -3,6 +3,7 @@ import React, { Fragment, useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Spinner from '../layout/Spinner';
 import UserComponent from './UserComponent';
+import Register from '../auth/Register';
 
 const Users = () => {
   const [ users, setUsers] = useState({});
@@ -29,6 +30,7 @@ const Users = () => {
 
   return (
     <Fragment>
+      <Register />
       {users !== null && !isLoading ? (
         <TransitionGroup>
           {users.map(user => (

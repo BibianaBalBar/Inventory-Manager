@@ -47,15 +47,21 @@ const UserComponent = ({ user, users, setUsers }) => {
 //       };   
 
   return (
-    <div className="card">
-      <h3 className="text-primary text-left">
-        {name}{' '}         
-      </h3>
-      <h4 className="text-primary text-left"> 
-        {email}{' '}   
-      </h4>
+    <div className="card-user">
+      <div className="card-user-info">
+        <h3 className="text-primary text-left">
+          {name}{' '}         
+        </h3>
+        <h4 className="text-primary text-left"> 
+          {email}{' '}   
+        </h4>
+      </div>
+      
       {/* <button className="btn btn-dark btn-sm" onClick={() => setCurrent(user)}>Update</button> */}
-      <button className="btn btn-danger btn-sm" onClick={onDelete}>Delete</button>
+      <div className="btn-side">
+        <button className="btn-delete btn-danger btn-sm" onClick={onDelete}>Delete</button>
+      </div>
+      
     </div>
   )
 };

@@ -63,7 +63,7 @@ const Register = (props) => {
   return (
     <div className="form-container">
       <h1>
-        Register <span className="text-primary">New Users</span>
+        Create <span className="text-primary">New User</span>
       </h1>
       <form onSubmit={onSubmit}>
         <div className="form-group">
