@@ -71,12 +71,13 @@ const ItemForm = () => {
         value={code} 
         onChange={onChange}
       />
-      <label htmlFor="quantity">Quantity:</label>
+      <label htmlFor="quantity">Quantity: </label>
       <input         
         type="number"           
         name="quantity"
         value={quantity} 
         onChange={onChange}
+        style={{ width: "100%" }}
       />
       <h5>Product Type:</h5>
       <input 

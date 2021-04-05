@@ -9,11 +9,7 @@ const Register = (props) => {
   const { setAlert } = alertContext;
   const { register, error, clearErrors } = authContext;
 
-  useEffect(() => {
-    // if(isAuthenticated) {
-    //   props.history.push('');
-    // }
-
+  useEffect(() => {    
     if(error === 'User already exists') {
       setAlert(error, 'danger');
       clearErrors();
@@ -61,11 +57,11 @@ const Register = (props) => {
   
 
   return (
-    <div className="form-container">
+    <div className="card-createUser">
       <h1>
         Create <span className="text-primary">New User</span>
       </h1>
-      <form onSubmit={onSubmit}>
+      <form  onSubmit={onSubmit}>
         <div className="form-group">
           <label htmlFor="name">Name:</label>
           <input type="text" name="name" value={name} onChange={onChange} required/>

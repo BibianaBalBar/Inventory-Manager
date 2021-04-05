@@ -20,17 +20,15 @@ const Users = () => {
   }, [users]);
 
   
-  
-  
   if(users !== null && users.length === 0 && !isLoading) {
     return <h4>No users found. Register new users.</h4>;
   }
 
   
-
   return (
     <Fragment>
       <Register />
+      <h1>Users List: </h1>
       {users !== null && !isLoading ? (
         <TransitionGroup>
           {users.map(user => (
