@@ -36,14 +36,14 @@ const Navbar = ({ title, icon }) => {
       </li>      
       <li>
         <Link to='/login'>Login</Link>
-      </li>
+      </li>      
     </Fragment>
   );
 
 
   return (
     <div className="navbar">
-      <h1>
+      <h1 className="logo">
         <i className={icon} /> {title}
       </h1>
       <ul>
@@ -51,7 +51,7 @@ const Navbar = ({ title, icon }) => {
         <Link to='#'>Hello { user && user.name }</Link>        
       </li>
       </ul>      
-      {isAuthenticated ? <Admin/> : null}    
+        {isAuthenticated ? <Admin/> : null}    
       <ul>
         {isAuthenticated ? authLinks : guestLinks}
       </ul>    

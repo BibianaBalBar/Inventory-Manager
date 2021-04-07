@@ -59,26 +59,27 @@ const Register = (props) => {
   return (
     <div className="card-createUser">
       <h1>
-        Create <span className="text-primary">New User</span>
+        Create <span className="text-success">New User</span>
       </h1>
-      <form  onSubmit={onSubmit}>
-        <div className="form-group">
+      <form  onSubmit={onSubmit} >
+        <div className="grid">
+        <div className="form-create">
           <label htmlFor="name">Name:</label>
           <input type="text" name="name" value={name} onChange={onChange} required/>
         </div>
-        <div className="form-group">
+        <div className="form-create">
           <label htmlFor="email">Email:</label>
           <input type="email" name="email" value={email} onChange={onChange} required/>
         </div>
-        <div className="form-group">
+        <div className="form-create">
           <label htmlFor="password">Password:</label>
           <input type="password" name="password" value={password} onChange={onChange} minLength="6" required/>
         </div>
-        <div className="form-group">
+        <div className="form-create">
           <label htmlFor="password2">Confirm Password:</label>
           <input type="password" name="password2" value={password2} onChange={onChange} minLength="6" required/>
         </div>
-        
+        </div>
         <input type="submit" value="Register" className="btn btn-primary btn-block" />
       </form>
     </div>

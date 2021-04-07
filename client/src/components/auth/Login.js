@@ -50,7 +50,7 @@ const Login = (props) => {
   return (
     <div className="form-container">
       <h1>
-        Account <span className="text-primary">Login</span>
+        Account <span className="text-success-log">Login</span>
       </h1>
       <form onSubmit={onSubmit}>        
         <div className="form-group">

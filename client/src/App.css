@@ -17,7 +17,7 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Spartan", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #eef0f3;
@@ -57,6 +57,15 @@ img {
 /* Text Styles*/
 .text-primary {
   color: var(--primary-color);
+}
+
+.text-success-log {
+  color: var(--success-color);
+  font-size: 2.5rem;
+}
+
+.text-success {
+  color: var(--success-color);
 }
 
 .text-left {
@@ -103,8 +112,8 @@ img {
 
 .card-createUser {
   padding: 1rem;
-  background: #fff;
   margin: 0.7rem 0 1.5rem 0;
+  background-color: white;
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
@@ -118,6 +127,14 @@ img {
 
 .card-createUser input {
   border-radius: 20px;
+}
+
+.form-create {
+  margin: 0.1rem 0;
+}
+
+.form-create input {
+  margin: 0;
 }
 
 form input {
@@ -179,6 +196,13 @@ h3 {
 
 .form-group input {
   margin: 0.2rem 0;
+}
+
+.form-items {
+  padding: 1rem;
+  background: #fff;
+  margin: 0.7rem 0;
+  border-radius: 20px;
 }
 
 /* Buttons */
@@ -250,7 +274,7 @@ h3 {
 }
 
 .navbar a {
-  color: var(--dark-color);
+  color: var(--primary-color);
   padding: 0.45rem;
   margin: 0 0.25rem;
   font-size: 1.5rem;
@@ -262,6 +286,13 @@ h3 {
 
 .navbar .welcome span {
   margin-right: 0.6rem;
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--success-color);
+  font-family: "Russo One", sans-serif;
 }
 
 /* Alerts */

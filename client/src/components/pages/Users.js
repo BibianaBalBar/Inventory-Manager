@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { Fragment, useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Spinner from '../layout/Spinner';
-import UserComponent from './UserComponent';
+import UserComponent from '../users/UserComponent';
 import Register from '../auth/Register';
 
 const Users = () => {

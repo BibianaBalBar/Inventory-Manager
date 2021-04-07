@@ -38,7 +38,7 @@ const ItemComponent = ({ item }) => {
           </li>
         )}        
       </ul>
-      <button className="btn btn-dark btn-sm" onClick={() => setCurrent(item)}>Update</button>
+      <button className="btn btn-primary btn-sm" onClick={() => setCurrent(item)}>Update</button>
       <button className="btn btn-danger btn-sm" onClick={onDelete}>Delete</button>
     </div>
   )

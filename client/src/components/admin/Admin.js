@@ -17,7 +17,7 @@ const Admin = () => {
       </li>   
       <li>
         <Link to='/users'>Users</Link>
-      </li>         
+      </li>               
     </ul>
   );
 

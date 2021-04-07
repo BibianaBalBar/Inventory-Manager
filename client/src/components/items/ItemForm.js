@@ -47,7 +47,7 @@ const ItemForm = () => {
   }
   
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className="form-items">
       <h2 className="text-primary">{current ? 'Update Product' : 'Add Product'}</h2>
       <input 
         type="text" 
@@ -73,7 +73,7 @@ const ItemForm = () => {
       />
       <label htmlFor="quantity">Quantity: </label>
       <input         
-        type="number"           
+        type="number"     
         name="quantity"
         value={quantity} 
         onChange={onChange}
