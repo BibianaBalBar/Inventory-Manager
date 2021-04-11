@@ -295,6 +295,10 @@ h3 {
   font-family: "Russo One", sans-serif;
 }
 
+.hello {
+  font-weight: bold;
+}
+
 /* Alerts */
 .alert {
   padding: 0.7rem;
@@ -348,11 +352,19 @@ h3 {
 }
 
 /* Mobile Styles */
-@media (max-width: 700px) {
-  .hide-sm {
+@media (max-width: 1024px) {
+  .fa-sign-out-alt {
     display: none;
   }
+}
 
+@media screen and (width: 768px) {
+  .logo {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 700px) {
   .grid {
     grid-template-columns: 1fr;
   }
@@ -370,5 +382,9 @@ h3 {
   .navbar ul {
     text-align: center;
     justify-content: center;
+  }
+
+  .logo {
+    font-size: 2.5rem;
   }
 }

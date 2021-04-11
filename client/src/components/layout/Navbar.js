@@ -29,16 +29,16 @@ const Navbar = ({ title, icon }) => {
     </Fragment>
   );
 
-  const guestLinks = (
-    <Fragment>
-      <li>
-        <Link to='/'>Home</Link>
-      </li>      
-      <li>
-        <Link to='/login'>Login</Link>
-      </li>      
-    </Fragment>
-  );
+  // const guestLinks = (
+  //   <Fragment>
+  //     <li>
+  //       <Link to='/'>Home</Link>
+  //     </li>      
+  //     <li>
+  //       <Link to='/login'>Login</Link>
+  //     </li>      
+  //   </Fragment>
+  // );
 
 
   return (
@@ -47,13 +47,13 @@ const Navbar = ({ title, icon }) => {
         <i className={icon} /> {title}
       </h1>
       <ul>
-      <li className="p-right">
+      <li className="p-right hello">
         <Link to='#'>Hello { user && user.name }</Link>        
       </li>
       </ul>      
         {isAuthenticated ? <Admin/> : null}    
       <ul>
-        {isAuthenticated ? authLinks : guestLinks}
+        {isAuthenticated ? authLinks : null}
       </ul>    
     </div>
   )
