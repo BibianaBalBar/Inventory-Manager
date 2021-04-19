@@ -1,6 +1,6 @@
 # Inventory Manager
 
-## MERN Webapp, build with React.js, Mongo.db database, Express and Node.js.
+## MERN WebApp, build with React.js, Mongo.db database, Express and Node.js.
 
 Keep track of your store Inventory. Add, update and delete products. Filter products. \
 User and Admin routes. Only Admin can create and delete users and view users page.
@@ -9,16 +9,15 @@ User and Admin routes. Only Admin can create and delete users and view users pag
 
 ## Deployed at:
 
-https://inventory-manager-2021.herokuapp.com/ \
+https://inventory-manager-2021.herokuapp.com/
 
 To test it as Admin use:\
 Email: Admin@admin.com \
-Password: isadmin \
-\\
+Password: isadmin
+
 To test it as regular user use:\
 Email: peter@mail.com \
 Password: 123456 \
-\\
 
 ## To run in your local server:
 
