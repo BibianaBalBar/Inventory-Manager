@@ -21,16 +21,16 @@ const Login = (props) => {
     // eslint-disable-next-line
   }, [error, isAuthenticated, props.history]);
 
-  const [user, setUser] = useState({    
+  const [logUser, setlogUser] = useState({    
     email: '',
     password: '',    
   });
 
-  const { email, password } = user;
+  const { email, password } = logUser;
 
   const onChange = (e) => {
-    setUser({
-      ...user,
+    setlogUser({
+      ...logUser,
       [e.target.name]: e.target.value
     });
   };
