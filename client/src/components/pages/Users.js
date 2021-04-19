@@ -6,9 +6,11 @@ import UserComponent from '../users/UserComponent';
 import Register from '../auth/Register';
 
 const Users = () => {
+
   const [ users, setUsers] = useState({});
   const [ isLoading, setIsLoading ] = useState(true);  
 
+  
   useEffect(() => {
     const fetchResults = async () => {
       const results = await axios.get('/api/users');
@@ -17,7 +19,7 @@ const Users = () => {
     }
     fetchResults();
     // eslint-disable-next-line
-  }, [users]);
+  }, []);
 
   
   if(users !== null && users.length === 0 && !isLoading) {
@@ -26,14 +28,14 @@ const Users = () => {
 
   
   return (
-    <Fragment>
+    <Fragment >
       <Register />
       <h1>Users List: </h1>
       {users !== null && !isLoading ? (
         <TransitionGroup>
           {users.map(user => (
               <CSSTransition key={user._id} timeout={500} classNames="fade">
-                <UserComponent  user={user} users={users} setUsers={setUsers}/>
+                <UserComponent  user={user} users={users} setUsers={setUsers} />
                 </CSSTransition>
               ))}
         </TransitionGroup>

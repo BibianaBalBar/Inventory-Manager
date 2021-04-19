@@ -35,6 +35,13 @@ export default (state, action) => {
         loading: false
       };
     case REGISTER_FAIL:
+      return {
+        ...state,
+        ...action.payload,
+        isAuthenticated: true,
+        loading: false,
+        error: action.payload
+      };  
     case AUTH_ERROR:  
     case LOGIN_FAIL:  
     case LOGOUT:
