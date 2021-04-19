@@ -17,7 +17,7 @@ Password: isadmin
 
 To test it as regular user use:\
 Email: peter@mail.com \
-Password: 123456 \
+Password: 123456
 
 ## To run in your local server:
 
