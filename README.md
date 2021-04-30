@@ -31,6 +31,8 @@ Clone this repo:
 
 Install all requirements
 
+Mongo DB: You'll need to create a cluster in your MongoDB account and add your connecting string to config/default.json
+
 Run the app:
 
         $ npm run dev
